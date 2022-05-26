@@ -1,0 +1,45 @@
+name: Spiky spam Release
+
+on:
+  push:
+    branches: main
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+
+    - name: Setup MSBuild
+      uses: microsoft/setup-msbuild@v1.0.2
+
+    - name: Setup VSTest Path
+      uses: darenm/Setup-VSTest@v1
+
+    - name: Restore NuGet Packages
+      run: nuget restore SpikySpamShellExtension.sln
+
+    - name: Build Application
+      run: msbuild SpikySpamShellExtension.sln /p:Configuration=Release
+
+    - name: VSTest
+      run: vstest.console.exe /InIsolation SpikySpamShellTest/bin/Release/SpikySpamShellTest.dll
+
+    - name: Upload Artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: SpikySpamShellExtension
+        path: SpikySpamShellExtension/bin/Release/
+
+    - name: Create Release
+      id: create_release
+      uses: actions/create-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        tag_name: ${{ github.ref }}
+        release_name: Release ${{ github.ref }}
+        draft: false
+        prerelease: false

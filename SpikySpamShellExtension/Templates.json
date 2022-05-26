@@ -1,0 +1,37 @@
+[
+  {
+    "Type": 0,
+    "Extensions": "",
+    "Description": "<New...>",
+    "Command": "",
+    "Arguments": ""
+  },
+  {
+    "Type": 4,
+    "Extensions": ".png;.jpg;.jpeg;.bmp",
+    "Description": "Paint.NET",
+    "Command": "C:\\Program Files\\paint.net\\PaintDotNet.exe",
+    "Arguments": "%1"
+  },
+  {
+    "Type": 7,
+    "Extensions": "",
+    "Description": "Notepad++",
+    "Command": "C:\\Program Files\\Notepad++\\notepad++.exe",
+    "Arguments": "-openFoldersAsWorkspace %1"
+  },
+  {
+    "Type": 10,
+    "Extensions": "",
+    "Description": "Notepad++",
+    "Command": "C:\\Program Files\\Notepad++\\notepad++.exe",
+    "Arguments": "-openFoldersAsWorkspace %1"
+  },
+  {
+    "Type": 4,
+    "Extensions": "",
+    "Description": "Notepad++",
+    "Command": "C:\\Program Files\\Notepad++\\notepad++.exe",
+    "Arguments": "%1"
+  }
+]
