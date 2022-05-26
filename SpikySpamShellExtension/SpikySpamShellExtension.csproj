@@ -137,6 +137,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="RegAsm.exe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resources\baloo-16.png" />
     <Content Include="Resources\baloo-24.png" />
     <Content Include="Resources\baloo-256.png" />
